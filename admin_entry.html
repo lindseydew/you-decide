@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script>
+var count=60;
+
+var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+
+function timer()
+{
+  count=count-1;
+  if (count <= 0)
+  {
+     clearInterval(counter);
+     //counter ended, do something here
+	  document.getElementById("timer").innerHTML="<a href=\"results.html\">See results</a>"; 
+     return;
+  }
+
+   document.getElementById("timer").innerHTML=count + " secs"; //Do code for showing the number of seconds here
+}
+
+</script>
     <link rel="stylesheet" type="text/css" href="http://pasteup.guim.co.uk/0.0.3/css/pasteup.min.css">
     <title>Admin</title>
 
@@ -108,7 +128,7 @@
                 
                             <div class="field">
                                 <div class="field-inputs">
-                                    <button type="submit" class="button">Start Experiment</button>
+                                    <button type="submit" class="button">Start Experiment</button><h3 id="timer"></h3>
                                 </div>
                             </div>
                         </fieldset>
