@@ -14,7 +14,7 @@ object Application extends Controller {
   }
 
   def test(id: Long) = Action {
-    val url : Trail = urls("/test1")
+    val url : Trail = urls("/test/%d".format(id))
     Redirect(url.getWebUrl)
 
   }

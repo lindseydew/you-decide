@@ -11,7 +11,7 @@ object Urls {
 
   //hardcode a list for now
   lazy val urls : Map[String, Trail] = Map(
-    "/test1" ->
+    "/test/1" ->
     new Trail("http://www.guardian.co.uk/global/2013/feb/18/bbc-strike-live-coverage",
           "BBC strike - live coverage",
           "<p>Radio 4's Today and BBC1's Breakfast off air as staff stage a 24-hour stoppage over proposed compulsory redundancies. By <strong>Dugald Baird</strong> and <strong>Josh Halliday</strong></p>",
