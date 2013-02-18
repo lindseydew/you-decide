@@ -76,3 +76,4 @@ object Trail {
     new Trail(webUrl, webTitle, trailText, trailPic)
   }
 }
+
