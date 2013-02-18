@@ -10,6 +10,69 @@ package models.Urls
 object Urls {
 
   //hardcode a list for now
-  lazy val urls = Map("/test1" -> "http://www.guardian.co.uk/society/2013/feb/18/illegal-use-bandbs-house-homeless")
+  lazy val urls : Map[String, Trail] = Map(
+    "/test1" ->
+    new Trail("http://www.guardian.co.uk/global/2013/feb/18/bbc-strike-live-coverage",
+          "BBC strike - live coverage",
+          "<p>Radio 4's Today and BBC1's Breakfast off air as staff stage a 24-hour stoppage over proposed compulsory redundancies. By <strong>Dugald Baird</strong> and <strong>Josh Halliday</strong></p>",
+          "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/18/1361183809068/-140x84.jpeg"),
+    "/test/2" ->
+    new Trail("http://www.guardian.co.uk/world/2013/feb/18/hugo-chavez-returns-venezuela",
+          "Hugo Chávez returns home to Venezuela",
+          "Venezuelan president at military hospital in Caracas after returning from more than two months of treatment in Cuba",
+          "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/18/1361189304470/Hugo-Chavez-with-his-daug-003.jpg"),
+          "/test/3" ->
+    new Trail("http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/18/1361189304470/Hugo-Chavez-with-his-daug-003.jpg",
+          "From grassroots to the gods: why British theatre is changinG",
+          "New faces in leading institutions are a welcome sight – but we might need to redefine what we mean by mainstream",
+          "http://static.guim.co.uk/sys-images/Arts/Arts_/Pictures/2013/2/18/1361187788797/The-Snow-Queen-performed--005.jpg"),
+          "/test/4" ->
+    new Trail("http://www.guardian.co.uk/stage/theatreblog/2013/feb/18/british-theatre-changing",
+          "Picture desk live: the best news pictures of the day",
+          "Our photo coverage of the day's events in the UK and around the world",
+          "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/18/1361180887671/Indian-bodybuilders--002.jpg"),
+          "/test/5" ->
+    new Trail("http://www.guardian.co.uk/football/video/2013/feb/18/ronaldinho-water-bottle-assist-video",
+          "Ronaldinho's sneaky water bottle assist – video",
+          "<p>At first glance in this footage, Ronaldinho appears to be bizarrely unmarked as he sets up a goal for Atlético Mineiro in their 2-1 win over São Paulo in the Copa Libertadores</p>",
+          "http://static.guim.co.uk/sys-images/Guardian/Pix/audio/video/2013/2/18/1361189018017/Is-Ronaldinhos-water-bott-010.jpg"),
+          "/test/6" ->
+    new Trail("books/booksblog/2013/feb/18/unread-unreadable-books",
+          "In theory: the unread and the unreadable",
+          "We measure our lives with unread books – and 'difficult' works can induce the most guilt. How should we view this challenge?",
+          "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2012/12/19/1355939525198/James-Joyce-pictured-in-1-005.jpg"),
+          "/test/7" ->
+    new Trail("http://www.guardian.co.uk/books/2013/feb/18/rare-poem-worst-poet-auction",
+          "Rare poem by 'world's worst poet' expected to fetch £3,000 at auction",
+          "19th-century poet William Topaz McGonagall, whose works were so detested he was pelted with rotten fish, has last laugh",
+          "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/18/1361190756707/Scottish-poet-William-McG-003.jpg"),
+          "/test/8" ->
+    new Trail("http://www.guardian.co.uk/technology/2013/feb/18/sonos-soundbar-home-theatre-system",
+          "Sonos Soundbar aims to ease pain of setting up home theatre sound systems",
+          "Co-founder Tom Cullen talks smart speakers and why it's taken so long for Apple to launch a music streaming service. By <strong>Charles Arthur</strong>",
+          "http://static.guim.co.uk/sys-images/Media/Pix/gallery/2013/2/18/1361190974196/Sonos-Soundbar-003.jpg"),
+          "/test/9" ->
+    new Trail("http://www.guardian.co.uk/uk/scotland-blog/2013/feb/18/scotland-firstworldwar",
+          "Mystery over world war one suitcase discovered in university cupboard",
+          "<p>Billy Briggs on the curious case of a battered suitcase belonging to a nurse who tended wounded German soldiers in Kent</p>",
+          "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/18/1361190774822/A-battered-suitcase-fille-005.jpg"),
+          "/test/10" ->
+    new Trail("http://www.guardian.co.uk/info/developer-blog/2013/feb/18/guardian-hack-day-february-2013-day-1",
+          "Guardian Hack Day February 2013 — Live Blog Day 1",
+          "<p>Follow our digital development team as they spend a Hack Day working on prototypes of potential new developments for the Guardian</p>",
+          "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/18/1361177479146/-140x84.jpeg")
+  )
+}
 
+class Trail( webUrl: String, webTitle: String, trailText : String, trailPic: String) {
+  def getWebTitle() : String = webTitle
+  def getTrailText() : String = trailText
+  def getTrailPic() : String = trailPic
+  def getWebUrl() : String = webUrl
+
+}
+object Trail {
+  def apply(webUrl: String, webTitle: String, trailText : String, trailPic: String)   {
+    new Trail(webUrl, webTitle, trailText, trailPic)
+  }
 }
