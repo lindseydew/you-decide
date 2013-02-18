@@ -14,7 +14,7 @@ object Urls {
     "/test/1" ->
     new Trail("http://www.guardian.co.uk/global/2013/feb/18/bbc-strike-live-coverage",
           "BBC strike - live coverage",
-          "<p>Radio 4's Today and BBC1's Breakfast off air as staff stage a 24-hour stoppage over proposed compulsory redundancies. By <strong>Dugald Baird</strong> and <strong>Josh Halliday</strong></p>",
+          "Radio 4's Today and BBC1's Breakfast off air as staff stage a 24-hour stoppage over proposed compulsory redundancies. By Dugald Baird and Josh Halliday",
           "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/18/1361183809068/-140x84.jpeg"),
     "/test/2" ->
     new Trail("http://www.guardian.co.uk/world/2013/feb/18/hugo-chavez-returns-venezuela",
@@ -34,7 +34,7 @@ object Urls {
           "/test/5" ->
     new Trail("http://www.guardian.co.uk/football/video/2013/feb/18/ronaldinho-water-bottle-assist-video",
           "Ronaldinho's sneaky water bottle assist – video",
-          "<p>At first glance in this footage, Ronaldinho appears to be bizarrely unmarked as he sets up a goal for Atlético Mineiro in their 2-1 win over São Paulo in the Copa Libertadores</p>",
+          "At first glance in this footage, Ronaldinho appears to be bizarrely unmarked as he sets up a goal for Atlético Mineiro in their 2-1 win over São Paulo in the Copa Libertadores",
           "http://static.guim.co.uk/sys-images/Guardian/Pix/audio/video/2013/2/18/1361189018017/Is-Ronaldinhos-water-bott-010.jpg"),
           "/test/6" ->
     new Trail("books/booksblog/2013/feb/18/unread-unreadable-books",
@@ -49,17 +49,17 @@ object Urls {
           "/test/8" ->
     new Trail("http://www.guardian.co.uk/technology/2013/feb/18/sonos-soundbar-home-theatre-system",
           "Sonos Soundbar aims to ease pain of setting up home theatre sound systems",
-          "Co-founder Tom Cullen talks smart speakers and why it's taken so long for Apple to launch a music streaming service. By <strong>Charles Arthur</strong>",
+          "Co-founder Tom Cullen talks smart speakers and why it's taken so long for Apple to launch a music streaming service. By Charles Arthur",
           "http://static.guim.co.uk/sys-images/Media/Pix/gallery/2013/2/18/1361190974196/Sonos-Soundbar-003.jpg"),
           "/test/9" ->
     new Trail("http://www.guardian.co.uk/uk/scotland-blog/2013/feb/18/scotland-firstworldwar",
           "Mystery over world war one suitcase discovered in university cupboard",
-          "<p>Billy Briggs on the curious case of a battered suitcase belonging to a nurse who tended wounded German soldiers in Kent</p>",
+          "Billy Briggs on the curious case of a battered suitcase belonging to a nurse who tended wounded German soldiers in Kent",
           "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/18/1361190774822/A-battered-suitcase-fille-005.jpg"),
           "/test/10" ->
     new Trail("http://www.guardian.co.uk/info/developer-blog/2013/feb/18/guardian-hack-day-february-2013-day-1",
           "Guardian Hack Day February 2013 — Live Blog Day 1",
-          "<p>Follow our digital development team as they spend a Hack Day working on prototypes of potential new developments for the Guardian</p>",
+          "Follow our digital development team as they spend a Hack Day working on prototypes of potential new developments for the Guardian",
           "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/18/1361177479146/-140x84.jpeg")
   )
 }
