@@ -3,18 +3,20 @@ package controllers
 import play.api._
 import mvc._
 import models.Urls._
+import models.Urls.Trail
 
 object Application extends Controller {
 
-  val urls = Urls.urls
+  val urls: Map[String, Trail] = Urls.urls
 
   def index = Action {
-    Ok(views.html.index(urls))
+    Ok(views.html.index(urls) )
   }
 
-  def test1 = Action {
-    val url = Urls.urls("/test1")
-    Redirect(url)
+  def test(id: Long) = Action {
+    val url : Trail = urls("/test1")
+    Redirect(url.getWebUrl)
+
   }
 
 
