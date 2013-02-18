@@ -1,0 +1,10 @@
+         .trailpic{
+
+             float: left;
+             margin-right:10px ;
+             margin-bottom: 10px;
+         }
+         .borderline{
+             clear: both;
+         }
+         a:active {color:#005689;}  /* selected link */
