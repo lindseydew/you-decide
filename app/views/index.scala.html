@@ -1,7 +1,10 @@
-@(message: String)
+@(urls: Map[String,String])
 
-@main("Welcome to Play 2.0") {
-    
-    @play20.welcome(message)
-    
-}
+welcome to you decide!
+
+
+<ul>
+    @urls.map { case (key, value) =>
+        <li><a href="@key">@value</a></li>
+    }
+</ul>
