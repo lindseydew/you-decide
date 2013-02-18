@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script>
-var count=60;
+var count,counter;
+function starttimer(){
+count=60;
 
-var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
-
+counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+}
 function timer()
 {
   count=count-1;
@@ -128,7 +131,7 @@ function timer()
                 
                             <div class="field">
                                 <div class="field-inputs">
-                                    <button type="submit" class="button">Start Experiment</button><h3 id="timer"></h3>
+                                    <button type="submit" class="button" id="startexperiment" onclick="starttimer();">Start Experiment</button><h3 id="timer"></h3>
                                 </div>
                             </div>
                         </fieldset>
