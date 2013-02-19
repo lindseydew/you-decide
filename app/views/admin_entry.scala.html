@@ -15,7 +15,7 @@
 		<h2 class="h">Menu heading</h2>
 		<ul class="topbar-menu pull-left">
 			<li><a href="/admin">Edit Experiment</a></li>
-			<li><a href="admin_results.html">See results</a></li>	
+			<li><a href="admin_results.html">See results</a></li>
 		</ul>
 	</div>
 </div>
@@ -25,7 +25,7 @@
 </div>
 
 <!--form start -->
-<form class="form" action="/start-experiment" method="POST">
+<form class="form" >
                     <h5 class="h3 zone-border h-backed">Promo links</h5>
                         <fieldset>
 <!-- start URL field -->
@@ -33,7 +33,7 @@
                                 <label class="field-label" for="web-address">guardian.co.uk URL 1</label>
                                 <div class="field-inputs">
                                     <input id="web-address" type="url" value="http://www.guardian.co.uk/global/2013/feb/18/bbc-strike-live-coverage"/>
-                                   
+
                                 </div>
                             </div>
 <!-- end URL field -->
@@ -42,25 +42,25 @@
                                 <label class="field-label" for="web-address">guardian.co.uk URL 2</label>
                                 <div class="field-inputs">
                                     <input id="web-address" type="url" value="http://www.guardian.co.uk/world/2013/feb/18/hugo-chavez-returns-venezuela"/>
-                                   
+
                                 </div>
                             </div>
-<!-- end URL field -->								
+<!-- end URL field -->
 <!-- start URL field -->
                             <div class="field">
                                 <label class="field-label" for="web-address">guardian.co.uk URL 3</label>
                                 <div class="field-inputs">
                                     <input id="web-address" type="url" value="http://www.guardian.co.uk/stage/theatreblog/2013/feb/18/british-theatre-changing"/>
-                                   
+
                                 </div>
                             </div>
-<!-- end URL field -->	
+<!-- end URL field -->
 <!-- start URL field -->
                             <div class="field">
                                 <label class="field-label" for="web-address">guardian.co.uk URL 4</label>
                                 <div class="field-inputs">
                                     <input id="web-address" type="url" value="http://www.guardian.co.uk/global/2013/feb/18/picture-desk-live-the-best-news-pictures-of-the-day"/>
-                                   
+
                                 </div>
                             </div>
 <!-- end URL field -->
@@ -69,16 +69,16 @@
                                 <label class="field-label" for="web-address">guardian.co.uk URL 5</label>
                                 <div class="field-inputs">
                                     <input id="web-address" type="url" value="http://www.guardian.co.uk/football/video/2013/feb/18/ronaldinho-water-bottle-assist-video"/>
-                                   
+
                                 </div>
                             </div>
-<!-- end URL field -->	
+<!-- end URL field -->
 <!-- start URL field -->
                             <div class="field">
                                 <label class="field-label" for="web-address">guardian.co.uk URL 6</label>
                                 <div class="field-inputs">
                                     <input id="web-address" type="url" value="http://www.guardian.co.uk/books/booksblog/2013/feb/18/unread-unreadable-books"/>
-                                   
+
                                 </div>
                             </div>
 <!-- end URL field -->
@@ -87,53 +87,58 @@
                                 <label class="field-label" for="web-address">guardian.co.uk URL 7</label>
                                 <div class="field-inputs">
                                     <input id="web-address" type="url" value="http://www.guardian.co.uk/books/2013/feb/18/rare-poem-worst-poet-auction"/>
-                                   
+
                                 </div>
                             </div>
-<!-- end URL field -->		
+<!-- end URL field -->
 <!-- start URL field -->
                             <div class="field">
                                 <label class="field-label" for="web-address">guardian.co.uk URL 8</label>
                                 <div class="field-inputs">
                                     <input id="web-address" type="url" value="http://www.guardian.co.uk/technology/2013/feb/18/sonos-soundbar-home-theatre-system"/>
-                                   
+
                                 </div>
                             </div>
-<!-- end URL field -->	
+<!-- end URL field -->
 <!-- start URL field -->
                             <div class="field">
                                 <label class="field-label" for="web-address">guardian.co.uk URL 9</label>
                                 <div class="field-inputs">
                                     <input id="web-address" type="url" value="http://www.guardian.co.uk/uk/scotland-blog/2013/feb/18/scotland-firstworldwar"/>
-                                   
+
                                 </div>
                             </div>
-<!-- end URL field -->	
+<!-- end URL field -->
 <!-- start URL field -->
                             <div class="field">
                                 <label class="field-label" for="web-address">guardian.co.uk URL 10</label>
                                 <div class="field-inputs">
                                     <input id="web-address" type="url" value="http://www.guardian.co.uk/info/developer-blog/2013/feb/18/guardian-hack-day-february-2013-day-1"/>
-                                   
+
                                 </div>
                             </div>
 <!-- end URL field -->
-                        @if( !started ){
-                            <div class="field">
-                                <div class="submit-input">
-                                    <button type="submit" action="/start-experiment" method="POST" class="button" id="START">Start Experiment</button>
-                                </div>
-                            </div>
-                        }else{
-                            <div class="field">
-                                <div class="submit-inputs2">
-                                    <button type="submit" action="/stop-experiment"  method="POST"  class="button" id="END">Stop Experiment</button>
-                                </div>
-                            </div>
-                        }
                         </fieldset>
                     </form>
 
+                @if( !started ){
+                <form class="form" action="/start-experiment" method="POST">
+                    <div class="field">
+                        <div class="field-inputs">
+                            <button type="submit" action="/start-experiment" method="POST" class="button" id="START">Start Experiment</button>
+                        </div>
+                    </div>
+                </form>
+                }else{
+                <form class="form" action="/stop-experiment" method="POST">
+                    <div class="field">
+                        <div class="field-inputs">
+                            <button type="submit" action="/stop-experiment"  method="POST"  class="button" id="END">Stop Experiment</button>
+                        </div>
+                    </div>
+                </form>
+
+                }
 
 </div>
 

@@ -23,7 +23,7 @@ object Urls {
           "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/18/1361189304470/Hugo-Chavez-with-his-daug-003.jpg"),
     3L ->
     new Trail("http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/18/1361189304470/Hugo-Chavez-with-his-daug-003.jpg",
-          "From grassroots to the gods: why British theatre is changinG",
+          "From grassroots to the gods: why British theatre is changing",
           "New faces in leading institutions are a welcome sight – but we might need to redefine what we mean by mainstream",
           "http://static.guim.co.uk/sys-images/Arts/Arts_/Pictures/2013/2/18/1361187788797/The-Snow-Queen-performed--005.jpg"),
     4L ->
