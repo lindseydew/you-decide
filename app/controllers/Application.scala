@@ -19,7 +19,7 @@ object Application extends Controller {
     Ok(views.html.index(urls) )
   }
 
-  def test(id: Long) = Action {
+   def test(id: Long) = Action {
     val url : Trail = urls("/test/%d".format(id))
     updateClickRate(id)
     Redirect(url.getWebUrl)
