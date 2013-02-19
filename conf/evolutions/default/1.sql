@@ -18,6 +18,7 @@ INSERT INTO click_rate(id, no_of_clicks) VALUES (8, 0);
 INSERT INTO click_rate(id, no_of_clicks) VALUES (9, 0);
 INSERT INTO click_rate(id, no_of_clicks) VALUES (10, 0);
 
+
 CREATE TABLE experiment (
     started boolean not null default false
 );
