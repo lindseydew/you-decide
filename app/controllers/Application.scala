@@ -9,22 +9,35 @@ import play.api.db.DB
 import play.api.Play.current
 import anorm._
 import anorm.SqlParser._
+import scala.util.Random
 
 
 object Application extends Controller {
 
-  val urls: Map[String, Trail] = Urls.urls
+  val urls: Map[Long, Trail] = Urls.urls
+  val experimentRunning: Boolean = false
 
   def index = Action {
-    Ok(views.html.index(urls) )
+    if(experimentRunning) {
+      val trails = displayRandomTrailBlocks
+      Ok(views.html.index(trails) )
+    }
+    else {
+      Ok(views.html.index(urls) )
+    }
   }
 
   def test(id: Long) = Action {
-    val url : Trail = urls("/test/%d".format(id))
+    val url : Trail = urls(id)
     updateClickRate(id)
     Redirect(url.getWebUrl)
 
   }
+
+  def displayRandomTrailBlocks: Map[Long, Trail] = {
+    Random.shuffle(urls).take(5).toMap
+  }
+
 
   def showClicks = Action {
       val clicks: List[ClickCount] = currentNumberOfClicks
@@ -52,6 +65,13 @@ object Application extends Controller {
     }
   }
 
+
+  def topNumberOfClicks = {
+    DB.withConnection { implicit c =>
+      SQL("SELECT id, no_of_clicks FROM click_rate order by no_of_clicks limit 5").as(click_rate *)
+    }
+  }
+
   def startExperiment = Action {
     Ok(views.html.index(urls) )
   }
@@ -60,5 +80,7 @@ object Application extends Controller {
   def admin = Action {
     Ok(views.html.admin_entry() )
   }
-
 }
+
+
+
