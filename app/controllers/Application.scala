@@ -53,12 +53,33 @@ object Application extends Controller {
   }
 
   def startExperiment = Action {
-    Ok(views.html.index(urls) )
+    DB.withConnection { implicit c =>
+      SQL("UPDATE click_rate SET no_of_clicks = 0").executeUpdate()
+    }
+    DB.withConnection { implicit c =>
+      SQL("UPDATE experiment SET started = true").executeUpdate()
+    }
+    Redirect("/admin")
+  }
+
+  def stopExperiment = Action {
+    DB.withConnection { implicit c =>
+      SQL("UPDATE experiment SET started = false").executeUpdate()
+    }
+    Redirect("/results")
+  }
+
+
+  def results = Action {
+    Ok(views.html.admin_results())
   }
 
 
   def admin = Action {
-    Ok(views.html.admin_entry() )
+    val row = DB.withConnection { implicit c =>
+      SQL("SELECT started FROM experiment").asSimple.single()
+    }
+    Ok(views.html.admin_entry(row.get[Boolean]("started").get))
   }
 
 }

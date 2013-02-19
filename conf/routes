@@ -7,7 +7,9 @@ GET     /                              controllers.Application.index
 GET     /test/:id                      controllers.Application.test(id: Long)
 GET     /clicks                        controllers.Application.showClicks
 GET     /admin                         controllers.Application.admin
+GET     /results                       controllers.Application.results
 POST	/start-experiment   	       controllers.Application.startExperiment
+POST	/stop-experiment   	           controllers.Application.stopExperiment
 
 
 # Map static resources from the /public folder to the /assets URL path
