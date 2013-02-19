@@ -21,7 +21,8 @@ object Application extends Controller {
   def test(id: Long) = Action {
     val url : Trail = urls("/test/%d".format(id))
     updateClickRate(id)
-    val clicks = currentNumberOfClick(id)
+    val clicks = currentNumberOfClicks
+    println(clicks)
     Redirect(url.getWebUrl)
 
   }
@@ -33,14 +34,19 @@ object Application extends Controller {
       ).executeUpdate()
     }
   }
-
-  def currentNumberOfClick(id: Long): Int = {
-    DB.withConnection { implicit c =>
-      SQL("SELECT no_of_clicks FROM click_rate WHERE id={id}").on(
-        'id -> id
-      )
-    }.execute()
-
-
+  case class ClickCount(id: Long, no_of_clicks: Long)
+  val click_rate = {
+    get[Long]("id") ~
+      get[Long]("no_of_clicks") map {
+      case id~no_of_clicks => ClickCount(id, no_of_clicks)
+    }
   }
+
+  def currentNumberOfClicks = {
+     DB.withConnection { implicit c =>
+      SQL("SELECT id, no_of_clicks FROM click_rate").as(click_rate *)
+
+    }
+  }
+
 }
