@@ -1,4 +1,4 @@
-@(clicks: List[models.Urls.ClickCount])
+@(clicks: String)
 
 <html>
 <head>
@@ -10,6 +10,7 @@
 </head>
 <body class="wrap">
 <div class="topbar">
+
     <div class="topbar-menu-container">
         <h2 class="h">Menu heading</h2>
         <ul class="topbar-menu pull-left">
@@ -25,6 +26,6 @@
 
 
 <h5 class="h3 zone-border h-backed">Results graph</h2>
-    <img src="http:////chart.googleapis.com/chart?chxl=0:|Number+of+onward+clicks|1:|URL1|URL2|URL3|URL4|URL5|URL6|URL7|URL8|URL9|URL10&chxr=0,-10,160&chxt=x,y&chbh=a,9,4&chs=600x500&cht=bhs&chco=005689&chds=0,160&chd=t:1,2,3,4,0,1,6,5,7,2&chtt=Experiment+Results" />
+    <img src="http:////chart.googleapis.com/chart?chxl=0:|Number+of+onward+clicks|1:|URL1|URL2|URL3|URL4|URL5|URL6|URL7|URL8|URL9|URL10&chxr=0,-10,160&chxt=x,y&chbh=a,9,4&chs=600x500&cht=bhs&chco=005689&chds=0,160&chd=t:@clicks&chtt=Experiment+Results" />
 </body>
 </html>
