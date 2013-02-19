@@ -1,0 +1,26 @@
+@(clicks: List[models.Urls.ClickCount])
+
+<html>
+<head>
+<head>
+    <link rel="stylesheet" type="text/css" href="http://pasteup.guim.co.uk/0.0.3/css/pasteup.min.css">
+    <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/main.css")">
+    <title>You decide</title>
+    <table>
+          <tr>
+              <th>Page Id</th>
+              <th>Clicks</th>
+          </tr>
+       @for( click <- clicks ) {
+          <tr>
+              <td>@click.id</td>
+              <td>@click.no_of_clicks</td>
+          </tr>
+       }
+    </table>
+
+</head>
+<body>
+
+</body>
+</html>

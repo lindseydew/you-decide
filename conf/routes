@@ -5,6 +5,7 @@
 # Home page
 GET     /                              controllers.Application.index
 GET     /test/:id                      controllers.Application.test(id: Long)
+GET     /clicks                        controllers.Application.showClicks
 
 
 # Map static resources from the /public folder to the /assets URL path
