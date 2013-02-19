@@ -27,7 +27,7 @@ object Urls {
           "New faces in leading institutions are a welcome sight – but we might need to redefine what we mean by mainstream",
           "http://static.guim.co.uk/sys-images/Arts/Arts_/Pictures/2013/2/18/1361187788797/The-Snow-Queen-performed--005.jpg"),
           "/test/4" ->
-    new Trail("http://www.guardian.co.uk/stage/theatreblog/2013/feb/18/british-theatre-changing",
+    new Trail("http://www.guardian.co.uk/global/2013/feb/18/picture-desk-live-the-best-news-pictures-of-the-day",
           "Picture desk live: the best news pictures of the day",
           "Our photo coverage of the day's events in the UK and around the world",
           "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/18/1361180887671/Indian-bodybuilders--002.jpg"),
