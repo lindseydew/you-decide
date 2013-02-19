@@ -65,9 +65,22 @@ object Application extends Controller {
     }
   }
 
+
   def topNumberOfClicks = {
     DB.withConnection { implicit c =>
       SQL("SELECT id, no_of_clicks FROM click_rate order by no_of_clicks limit 5").as(click_rate *)
     }
   }
+
+  def startExperiment = Action {
+    Ok(views.html.index(urls) )
+  }
+
+
+  def admin = Action {
+    Ok(views.html.admin_entry() )
+  }
 }
+
+
+
