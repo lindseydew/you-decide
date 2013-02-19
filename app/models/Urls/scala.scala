@@ -22,12 +22,12 @@ object Urls {
           "Venezuelan president at military hospital in Caracas after returning from more than two months of treatment in Cuba",
           "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/18/1361189304470/Hugo-Chavez-with-his-daug-003.jpg"),
           "/test/3" ->
-    new Trail("http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/18/1361189304470/Hugo-Chavez-with-his-daug-003.jpg",
-          "From grassroots to the gods: why British theatre is changinG",
+    new Trail("http://www.guardian.co.uk/stage/theatreblog/2013/feb/18/british-theatre-changing",
+          "From grassroots to the gods: why British theatre is changing",
           "New faces in leading institutions are a welcome sight – but we might need to redefine what we mean by mainstream",
           "http://static.guim.co.uk/sys-images/Arts/Arts_/Pictures/2013/2/18/1361187788797/The-Snow-Queen-performed--005.jpg"),
           "/test/4" ->
-    new Trail("http://www.guardian.co.uk/stage/theatreblog/2013/feb/18/british-theatre-changing",
+    new Trail("http://www.guardian.co.uk/global/2013/feb/18/picture-desk-live-the-best-news-pictures-of-the-day",
           "Picture desk live: the best news pictures of the day",
           "Our photo coverage of the day's events in the UK and around the world",
           "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/18/1361180887671/Indian-bodybuilders--002.jpg"),
@@ -37,7 +37,7 @@ object Urls {
           "At first glance in this footage, Ronaldinho appears to be bizarrely unmarked as he sets up a goal for Atlético Mineiro in their 2-1 win over São Paulo in the Copa Libertadores",
           "http://static.guim.co.uk/sys-images/Guardian/Pix/audio/video/2013/2/18/1361189018017/Is-Ronaldinhos-water-bott-010.jpg"),
           "/test/6" ->
-    new Trail("books/booksblog/2013/feb/18/unread-unreadable-books",
+    new Trail("http://www.guardian.co.uk/books/booksblog/2013/feb/18/unread-unreadable-books",
           "In theory: the unread and the unreadable",
           "We measure our lives with unread books – and 'difficult' works can induce the most guilt. How should we view this challenge?",
           "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2012/12/19/1355939525198/James-Joyce-pictured-in-1-005.jpg"),
