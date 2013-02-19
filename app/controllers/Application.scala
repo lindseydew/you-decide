@@ -49,4 +49,13 @@ object Application extends Controller {
     }
   }
 
+  def startExperiment = Action {
+    Ok(views.html.index(urls) )
+  }
+
+
+  def admin = Action {
+    Ok(views.html.admin_entry() )
+  }
+
 }
