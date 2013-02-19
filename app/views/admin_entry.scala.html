@@ -47,7 +47,7 @@ function timer()
 
 <!--form start -->
 <form class="form" action="/start-experiment" method="POST">
-                    <h5 class="h3 zone-border h-backed">Promo links</h2>
+                    <h5 class="h3 zone-border h-backed">Promo links</h5>
                         <fieldset>
 <!-- start URL field -->
                             <div class="field">
@@ -139,19 +139,19 @@ function timer()
                                 </div>
                             </div>
 <!-- end URL field -->
-                        @if( started ){
+                        @if( !started ){
                             <div class="field">
-                                <div class="field-inputs">
-                                    <button type="submit" action="start-experiment" method="POST" class="button" id="startexperiment">Start Experiment</button>
+                                <div class="submit-input">
+                                    <button type="submit" action="/start-experiment" method="POST" class="button" id="START">Start Experiment</button>
                                 </div>
                             </div>
                         }else{
                             <div class="field">
-                                <div class="field-inputs">
-                                    <button type="submit" action="stop-experiment"  method="POST"  class="button" id="endexperiment">Stop Experiment</button>
+                                <div class="submit-inputs2">
+                                    <button type="submit" action="/stop-experiment"  method="POST"  class="button" id="END">Stop Experiment</button>
                                 </div>
                             </div>
-                       }
+                        }
                         </fieldset>
                     </form>
 

@@ -73,6 +73,7 @@ object Application extends Controller {
   }
 
   def startExperiment = Action {
+    println("START")
     DB.withConnection { implicit c =>
       SQL("UPDATE click_rate SET no_of_clicks = 0").executeUpdate()
     }
@@ -83,6 +84,7 @@ object Application extends Controller {
   }
 
   def stopExperiment = Action {
+    println("STOP")
     DB.withConnection { implicit c =>
       SQL("UPDATE experiment SET started = false").executeUpdate()
     }
