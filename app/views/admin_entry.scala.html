@@ -6,22 +6,22 @@
 <script>
 var count,counter;
 function starttimer(){
-count=60;
+count=0;
 
-counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+counter=setInterval(timer, 1); //1000 will  run it every 1 second
 }
 function timer()
 {
   count=count-1;
-  if (count <= 0)
+  if (count <= -2)
   {
      clearInterval(counter);
      //counter ended, do something here
-	  document.getElementById("timer").innerHTML="<a href=\"results.html\">See results</a>"; 
+	  document.getElementById("timer").innerHTML="<a href=\"admin_results.html\">See results</a>"; 
      return;
   }
 
-   document.getElementById("timer").innerHTML=count + " secs"; //Do code for showing the number of seconds here
+ 
 }
 
 </script>
@@ -35,8 +35,8 @@ function timer()
 	<div class="topbar-menu-container">
 		<h2 class="h">Menu heading</h2>
 		<ul class="topbar-menu pull-left">
-			<li><a href="#">Edit Experiment</a></li>
-			<li><a href="#">See results</a></li>	
+			<li><a href="/admin">Edit Experiment</a></li>
+			<li><a href="admin_results.html">See results</a></li>	
 		</ul>
 	</div>
 </div>
@@ -46,14 +46,14 @@ function timer()
 </div>
 
 <!--form start -->
-<form class="form" action="#">
+<form class="form" action="/start-experiment" method="POST">
                     <h5 class="h3 zone-border h-backed">Promo links</h2>
                         <fieldset>
 <!-- start URL field -->
                             <div class="field">
                                 <label class="field-label" for="web-address">guardian.co.uk URL 1</label>
                                 <div class="field-inputs">
-                                    <input id="web-address" type="url"/>
+                                    <input id="web-address" type="url" value="http://www.guardian.co.uk/global/2013/feb/18/bbc-strike-live-coverage"/>
                                    
                                 </div>
                             </div>
@@ -62,7 +62,7 @@ function timer()
                             <div class="field">
                                 <label class="field-label" for="web-address">guardian.co.uk URL 2</label>
                                 <div class="field-inputs">
-                                    <input id="web-address" type="url"/>
+                                    <input id="web-address" type="url" value="http://www.guardian.co.uk/world/2013/feb/18/hugo-chavez-returns-venezuela"/>
                                    
                                 </div>
                             </div>
@@ -71,7 +71,7 @@ function timer()
                             <div class="field">
                                 <label class="field-label" for="web-address">guardian.co.uk URL 3</label>
                                 <div class="field-inputs">
-                                    <input id="web-address" type="url"/>
+                                    <input id="web-address" type="url" value="http://www.guardian.co.uk/stage/theatreblog/2013/feb/18/british-theatre-changing"/>
                                    
                                 </div>
                             </div>
@@ -80,7 +80,7 @@ function timer()
                             <div class="field">
                                 <label class="field-label" for="web-address">guardian.co.uk URL 4</label>
                                 <div class="field-inputs">
-                                    <input id="web-address" type="url"/>
+                                    <input id="web-address" type="url" value="http://www.guardian.co.uk/global/2013/feb/18/picture-desk-live-the-best-news-pictures-of-the-day"/>
                                    
                                 </div>
                             </div>
@@ -89,7 +89,7 @@ function timer()
                             <div class="field">
                                 <label class="field-label" for="web-address">guardian.co.uk URL 5</label>
                                 <div class="field-inputs">
-                                    <input id="web-address" type="url"/>
+                                    <input id="web-address" type="url" value="http://www.guardian.co.uk/football/video/2013/feb/18/ronaldinho-water-bottle-assist-video"/>
                                    
                                 </div>
                             </div>
@@ -98,7 +98,7 @@ function timer()
                             <div class="field">
                                 <label class="field-label" for="web-address">guardian.co.uk URL 6</label>
                                 <div class="field-inputs">
-                                    <input id="web-address" type="url"/>
+                                    <input id="web-address" type="url" value="http://www.guardian.co.uk/books/booksblog/2013/feb/18/unread-unreadable-books"/>
                                    
                                 </div>
                             </div>
@@ -107,7 +107,7 @@ function timer()
                             <div class="field">
                                 <label class="field-label" for="web-address">guardian.co.uk URL 7</label>
                                 <div class="field-inputs">
-                                    <input id="web-address" type="url"/>
+                                    <input id="web-address" type="url" value="http://www.guardian.co.uk/books/2013/feb/18/rare-poem-worst-poet-auction"/>
                                    
                                 </div>
                             </div>
@@ -116,7 +116,7 @@ function timer()
                             <div class="field">
                                 <label class="field-label" for="web-address">guardian.co.uk URL 8</label>
                                 <div class="field-inputs">
-                                    <input id="web-address" type="url"/>
+                                    <input id="web-address" type="url" value="http://www.guardian.co.uk/technology/2013/feb/18/sonos-soundbar-home-theatre-system"/>
                                    
                                 </div>
                             </div>
@@ -125,7 +125,7 @@ function timer()
                             <div class="field">
                                 <label class="field-label" for="web-address">guardian.co.uk URL 9</label>
                                 <div class="field-inputs">
-                                    <input id="web-address" type="url"/>
+                                    <input id="web-address" type="url" value="http://www.guardian.co.uk/uk/scotland-blog/2013/feb/18/scotland-firstworldwar"/>
                                    
                                 </div>
                             </div>
@@ -134,7 +134,7 @@ function timer()
                             <div class="field">
                                 <label class="field-label" for="web-address">guardian.co.uk URL 10</label>
                                 <div class="field-inputs">
-                                    <input id="web-address" type="url"/>
+                                    <input id="web-address" type="url" value="http://www.guardian.co.uk/info/developer-blog/2013/feb/18/guardian-hack-day-february-2013-day-1"/>
                                    
                                 </div>
                             </div>
@@ -148,7 +148,7 @@ function timer()
                         }else{
                             <div class="field">
                                 <div class="field-inputs">
-                                    <button type="submit" action="stop-experiment"  method="POST"  class="button" id="stopexperiment">Stop Experiment</button>
+                                    <button type="submit" action="stop-experiment"  method="POST"  class="button" id="endexperiment">Stop Experiment</button>
                                 </div>
                             </div>
                        }
