@@ -23,7 +23,8 @@ object Application extends Controller {
       Ok(views.html.index(trails) )
     }
     else {
-      Ok(views.html.index(urls) )
+     val trails = displayTopTrailBlocks
+      Ok(views.html.index(trails) )
     }
   }
 
@@ -36,6 +37,12 @@ object Application extends Controller {
 
   def displayRandomTrailBlocks: Map[Long, Trail] = {
     Random.shuffle(urls).take(5).toMap
+  }
+
+  def displayTopTrailBlocks: Map[Long, Trail] = {
+    val clicks: List[ClickCount] = topNumberOfClicks
+    val trails: Map[Long, Trail] = clicks.map( click => (click.id, urls(click.id))).toMap
+    trails
   }
 
 
@@ -68,7 +75,7 @@ object Application extends Controller {
 
   def topNumberOfClicks = {
     DB.withConnection { implicit c =>
-      SQL("SELECT id, no_of_clicks FROM click_rate order by no_of_clicks limit 5").as(click_rate *)
+      SQL("SELECT id, no_of_clicks FROM click_rate order by no_of_clicks desc limit 5").as(click_rate *)
     }
   }
 
@@ -78,7 +85,7 @@ object Application extends Controller {
 
 
   def admin = Action {
-    Ok(views.html.admin_entry() )
+    Ok(views.html.admin_entry())
   }
 }
 
