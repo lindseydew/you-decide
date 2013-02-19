@@ -5,14 +5,14 @@
 <script>
 var count,counter;
 function starttimer(){
-count=60;
+count=0;
 
-counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+counter=setInterval(timer, 1); //1000 will  run it every 1 second
 }
 function timer()
 {
   count=count-1;
-  if (count <= 0)
+  if (count <= -2)
   {
      clearInterval(counter);
      //counter ended, do something here
@@ -20,7 +20,7 @@ function timer()
      return;
   }
 
-   document.getElementById("timer").innerHTML=count + " secs"; //Do code for showing the number of seconds here
+ 
 }
 
 </script>
@@ -141,7 +141,7 @@ function timer()
                 
                             <div class="field">
                                 <div class="field-inputs">
-                                    <button type="submit" class="button" id="startexperiment" onclick="starttimer();">Start Experiment</button><h3 id="timer"></h3>
+                                    <button type="submit" class="button" id="endexperiment" onclick="starttimer();">End Experiment</button><h3 id="timer"></h3>
                                 </div>
                             </div>
                         </fieldset>
