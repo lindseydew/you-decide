@@ -108,7 +108,7 @@ object Application extends Controller {
     DB.withConnection { implicit c =>
       SQL("UPDATE experiment SET started = true").executeUpdate()
     }
-    Redirect("/admin")
+    Redirect("/")
   }
 
   def stopExperiment = Action {
