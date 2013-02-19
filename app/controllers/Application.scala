@@ -15,7 +15,13 @@ import scala.util.Random
 object Application extends Controller {
 
   val urls: Map[Long, Trail] = Urls.urls
-  val experimentRunning: Boolean = false
+
+  def experimentRunning: Boolean = {
+    val row = DB.withConnection { implicit c =>
+      SQL("SELECT started FROM experiment").asSimple.single()
+    }
+    row.get[Boolean]("started").get
+  }
 
   def index = Action {
     if(experimentRunning) {
@@ -91,7 +97,6 @@ object Application extends Controller {
   }
 
   def stopExperiment = Action {
-    println("STOP")
     DB.withConnection { implicit c =>
       SQL("UPDATE experiment SET started = false").executeUpdate()
     }
@@ -105,10 +110,7 @@ object Application extends Controller {
 
 
   def admin = Action {
-    val row = DB.withConnection { implicit c =>
-      SQL("SELECT started FROM experiment").asSimple.single()
-    }
-    Ok(views.html.admin_entry(row.get[Boolean]("started").get))
+    Ok(views.html.admin_entry(experimentRunning))
   }
 }
 
