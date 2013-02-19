@@ -1,4 +1,4 @@
-@(urls: Map[String,models.Urls.Trail])
+@(urls: Map[Long,models.Urls.Trail])
 
 
 <html>
@@ -18,7 +18,7 @@
 @urls.map { case (key, value) =>
 <div class="trail">
 
-        <a href="@key">
+        <a href="test/@key">
         <h2 class="headline">@value.getWebTitle</h2>
         <img class="trailpic" src="@value.getTrailPic" /> </a>
 		    <div class="col-6">

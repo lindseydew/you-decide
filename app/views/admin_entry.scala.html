@@ -1,18 +1,19 @@
-<!DOCTYPE html>
+@(started: Boolean)
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script>
 var count,counter;
 function starttimer(){
-count=60;
+count=0;
 
-counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+counter=setInterval(timer, 1); //1000 will  run it every 1 second
 }
 function timer()
 {
   count=count-1;
-  if (count <= 0)
+  if (count <= -2)
   {
      clearInterval(counter);
      //counter ended, do something here
@@ -20,12 +21,12 @@ function timer()
      return;
   }
 
-   document.getElementById("timer").innerHTML=count + " secs"; //Do code for showing the number of seconds here
+ 
 }
 
 </script>
     <link rel="stylesheet" type="text/css" href="http://pasteup.guim.co.uk/0.0.3/css/pasteup.min.css">
-	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/main.css")">
     <title>Admin</title>
 
 </head>
@@ -34,7 +35,7 @@ function timer()
 	<div class="topbar-menu-container">
 		<h2 class="h">Menu heading</h2>
 		<ul class="topbar-menu pull-left">
-			<li><a href="admin_entry.html">Edit Experiment</a></li>
+			<li><a href="/admin">Edit Experiment</a></li>
 			<li><a href="admin_results.html">See results</a></li>	
 		</ul>
 	</div>
@@ -45,8 +46,8 @@ function timer()
 </div>
 
 <!--form start -->
-<form class="form" action="#">
-                    <h5 class="h3 zone-border h-backed">Promo links</h2>
+<form class="form" action="/start-experiment" method="POST">
+                    <h5 class="h3 zone-border h-backed">Promo links</h5>
                         <fieldset>
 <!-- start URL field -->
                             <div class="field">
@@ -137,13 +138,20 @@ function timer()
                                    
                                 </div>
                             </div>
-<!-- end URL field -->		
-                
+<!-- end URL field -->
+                        @if( !started ){
                             <div class="field">
-                                <div class="field-inputs">
-                                    <button type="submit" class="button" id="startexperiment" onclick="starttimer();">Start Experiment</button><h3 id="timer"></h3>
+                                <div class="submit-input">
+                                    <button type="submit" action="/start-experiment" method="POST" class="button" id="START">Start Experiment</button>
                                 </div>
                             </div>
+                        }else{
+                            <div class="field">
+                                <div class="submit-inputs2">
+                                    <button type="submit" action="/stop-experiment"  method="POST"  class="button" id="END">Stop Experiment</button>
+                                </div>
+                            </div>
+                        }
                         </fieldset>
                     </form>
 
