@@ -6,6 +6,7 @@
 GET     /                              controllers.Application.index
 GET     /test/:id                      controllers.Application.test(id: Long)
 GET     /clicks                        controllers.Application.showClicks
+GET     /results                       controllers.Application.displayResults
 GET     /admin                         controllers.Application.admin
 GET     /results                       controllers.Application.results
 POST	/start-experiment   	       controllers.Application.startExperiment

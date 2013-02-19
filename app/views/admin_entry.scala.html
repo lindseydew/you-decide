@@ -3,28 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<script>
-var count,counter;
-function starttimer(){
-count=0;
 
-counter=setInterval(timer, 1); //1000 will  run it every 1 second
-}
-function timer()
-{
-  count=count-1;
-  if (count <= -2)
-  {
-     clearInterval(counter);
-     //counter ended, do something here
-	  document.getElementById("timer").innerHTML="<a href=\"admin_results.html\">See results</a>"; 
-     return;
-  }
-
- 
-}
-
-</script>
     <link rel="stylesheet" type="text/css" href="http://pasteup.guim.co.uk/0.0.3/css/pasteup.min.css">
 	<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/main.css")">
     <title>Admin</title>

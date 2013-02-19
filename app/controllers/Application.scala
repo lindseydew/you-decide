@@ -34,8 +34,11 @@ object Application extends Controller {
     }
   }
 
+
+
   def test(id: Long) = Action {
     val url : Trail = urls(id)
+
     updateClickRate(id)
     Redirect(url.getWebUrl)
 
@@ -54,7 +57,19 @@ object Application extends Controller {
 
   def showClicks = Action {
       val clicks: List[ClickCount] = currentNumberOfClicks
+
       Ok(views.html.clicks(clicks))
+  }
+
+  def displayResults = Action {
+    val clicks = currentNumberOfClicks
+    val commaDelineatedClicks: String = clicks.map {
+      c => c.no_of_clicks.toString
+    }.reduceLeft[String] {
+      (acc, n) => acc + "," + n
+    }
+
+    Ok(views.html.results(commaDelineatedClicks))
   }
 
   def updateClickRate(id: Long) = {
