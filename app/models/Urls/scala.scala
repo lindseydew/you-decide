@@ -77,3 +77,9 @@ object Trail {
   }
 }
 
+case class ClickCount(id: Long, no_of_clicks: Long) {
+  def getId() : String = id.toString
+  def getNoOfClicks : String = no_of_clicks.toString
+}
+
+
