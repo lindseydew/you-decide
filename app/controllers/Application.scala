@@ -10,6 +10,7 @@ import play.api.Play.current
 import anorm._
 import anorm.SqlParser._
 import scala.util.Random
+import collection.immutable.SortedMap
 
 
 object Application extends Controller {
@@ -69,7 +70,21 @@ object Application extends Controller {
       (acc, n) => acc + "," + n
     }
 
-    Ok(views.html.results(commaDelineatedClicks))
+
+    val sorted = SortedMap.empty[Long, Trail] ++ urls
+    val pipedUrls = sorted.map
+      {
+        case (key, value) => {
+          val url = value.getWebUrl()
+          url.substring(url.lastIndexOf('/') + 1)
+        }
+      }.reduceLeft[String] {
+       (acc,n) => acc + "|" + n
+    }
+
+    println(pipedUrls)
+
+    Ok(views.html.results(commaDelineatedClicks, pipedUrls))
   }
 
   def updateClickRate(id: Long) = {
@@ -102,9 +117,6 @@ object Application extends Controller {
 
   def startExperiment = Action {
     println("START")
-    DB.withConnection { implicit c =>
-      SQL("UPDATE click_rate SET no_of_clicks = 0").executeUpdate()
-    }
     DB.withConnection { implicit c =>
       SQL("UPDATE experiment SET started = true").executeUpdate()
     }
